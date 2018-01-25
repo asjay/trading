@@ -29,7 +29,6 @@ public class SimpleMovingAverage {
         for(Candle candle: candleList){
             movingPrice.add(candle.getClosePrice());
         }
-
         double sma = movingPrice.doubleValue()/periods;
         return sma;
     }
