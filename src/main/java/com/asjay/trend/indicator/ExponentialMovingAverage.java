@@ -1,25 +1,32 @@
 package com.asjay.trend.indicator;
 
-import com.asjay.model.display.Candle;
+import com.asjay.trend.indicator.data.CandleQueue;
 
 import java.util.List;
 
 public class ExponentialMovingAverage {
-    private List<IndicatorData> candleList;
+    private CandleQueue candleList;
+    private int periods;
+    private double previousEMA;
+    private double ema;
 
-    public ExponentialMovingAverage(List<IndicatorData> candleList) {
+
+    public ExponentialMovingAverage(CandleQueue candleList, double previousEMA) {
         this.candleList = candleList;
+        this.previousEMA=previousEMA;
     }
 
-    public List<IndicatorData> getCandleList() {
+    public CandleQueue getCandleList() {
         return candleList;
     }
 
-    public void setCandleList(List<IndicatorData> candleList) {
+    public void setCandleList(CandleQueue candleList) {
         this.candleList = candleList;
     }
 
-    public void calculate(){
-
+    public double calculate(){
+        double smoothingFactor = 2/(1+periods);
+        this.ema = (candleList.getLastCandle().getClosePrice().doubleValue()*smoothingFactor)+(previousEMA*(1-smoothingFactor));
+        return ema;
     }
 }
