@@ -1,6 +1,6 @@
-package com.asjay.trend.indicator;
+package com.asjay.trading.trend.indicator;
 
-import com.asjay.trend.data.CandleQueue;
+import com.asjay.trading.trend.data.CandleQueue;
 
 public class ExponentialMovingAverage {
     private CandleQueue candleList;

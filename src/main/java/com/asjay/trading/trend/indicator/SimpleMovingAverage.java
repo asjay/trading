@@ -1,7 +1,6 @@
-package com.asjay.trend.indicator;
+package com.asjay.trading.trend.indicator;
 
-import com.asjay.model.display.Candle;
-import com.asjay.model.display.Period;
+import com.asjay.trading.model.display.Candle;
 
 import java.math.BigDecimal;
 import java.util.List;

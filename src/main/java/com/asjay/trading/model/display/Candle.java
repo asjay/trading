@@ -1,4 +1,4 @@
-package com.asjay.model.display;
+package com.asjay.trading.model.display;
 import java.math.BigDecimal;
 
 public class Candle {

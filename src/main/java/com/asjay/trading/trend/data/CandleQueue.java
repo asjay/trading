@@ -1,6 +1,6 @@
-package com.asjay.trend.data;
+package com.asjay.trading.trend.data;
 
-import com.asjay.model.display.Candle;
+import com.asjay.trading.model.display.Candle;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

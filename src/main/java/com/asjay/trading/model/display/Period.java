@@ -1,7 +1,7 @@
-package com.asjay.model.display;
+package com.asjay.trading.model.display;
 
 public class Period {
-
+    // periods are times in milliseconds since epoch
     private long openTime;
     private long closeTime;
 
