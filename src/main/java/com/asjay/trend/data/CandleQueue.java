@@ -1,4 +1,4 @@
-package com.asjay.trend.indicator.data;
+package com.asjay.trend.data;
 
 import com.asjay.model.display.Candle;
 
