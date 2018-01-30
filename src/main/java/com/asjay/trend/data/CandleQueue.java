@@ -29,4 +29,5 @@ public class CandleQueue {
     public Deque<Candle> getLastNCandles(int n){
         return candleList; //TODO
     }
+
 }
