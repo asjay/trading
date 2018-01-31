@@ -1,65 +1,77 @@
 package com.asjay.trading.model.display;
+import com.asjay.trading.model.money.MonetaryUnit;
+
 import java.math.BigDecimal;
 
 public class Candle {
 
-    private BigDecimal openPrice;
-    private BigDecimal closePrice;
-    private BigDecimal highestPrice;
-    private BigDecimal lowestPrice;
-    private BigDecimal averagePrice;
+    private MonetaryUnit openPrice;
+    private MonetaryUnit closePrice;
+    private MonetaryUnit highestPrice;
+    private MonetaryUnit lowestPrice;
+    private MonetaryUnit averagePrice;
     private Period period;
+    private Volume volume;
 
-    public Candle(BigDecimal openPrice, BigDecimal closePrice, BigDecimal highestPrice, BigDecimal lowestPrice, Period period) {
+    public Candle(MonetaryUnit openPrice, MonetaryUnit closePrice, MonetaryUnit highestPrice, MonetaryUnit lowestPrice, Period period, Volume volume) {
         this.openPrice = openPrice;
         this.closePrice = closePrice;
         this.highestPrice = highestPrice;
         this.lowestPrice = lowestPrice;
         this.period = period;
+        this.volume = volume;
         this.averagePrice = getAveragePrice();
     }
 
-    private BigDecimal calculateAveragePrice() {
-        return openPrice.add(closePrice).divide(new BigDecimal(2));
+    public Volume getVolume() {
+        return volume;
     }
 
-    public BigDecimal getAveragePrice() {
+    public void setVolume(Volume volume) {
+        this.volume = volume;
+    }
+
+    private MonetaryUnit calculateAveragePrice() {
+        return null; //TODO: return the appropriate average price after averaging the open anc close price based on the Monetary Unit.
+    }
+
+    public MonetaryUnit getAveragePrice() {
         return averagePrice;
     }
 
-    public BigDecimal getOpenPrice() {
+    public MonetaryUnit getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(BigDecimal openPrice) {
+    public void setOpenPrice(MonetaryUnit openPrice) {
         this.openPrice = openPrice;
     }
 
-    public BigDecimal getHighestPrice() {
+    public MonetaryUnit getHighestPrice() {
         return highestPrice;
     }
 
-    public void setHighestPrice(BigDecimal highestPrice) {
+    public void setHighestPrice(MonetaryUnit highestPrice) {
         this.highestPrice = highestPrice;
     }
 
-    public BigDecimal getLowestPrice() {
+    public MonetaryUnit getLowestPrice() {
         return lowestPrice;
     }
 
-    public void setLowestPrice(BigDecimal lowestPrice) {
+    public void setLowestPrice(MonetaryUnit lowestPrice) {
         this.lowestPrice = lowestPrice;
     }
 
-    public BigDecimal getClosePrice() {
+    public MonetaryUnit getClosePrice() {
         return closePrice;
     }
 
-    public void setClosePrice(BigDecimal closePrice) {
+    public void setClosePrice(MonetaryUnit closePrice) {
         this.closePrice = closePrice;
     }
 
-    public void setAveragePrice(BigDecimal averagePrice) {
+    public void setAveragePrice(MonetaryUnit averagePrice) {
         this.averagePrice = averagePrice;
     }
 
