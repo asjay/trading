@@ -1,4 +1,4 @@
-package com.asjay.trading.model.display;
+package com.asjay.trading.model;
 
 import com.asjay.trading.model.money.MonetaryUnit;
 

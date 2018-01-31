@@ -1,4 +1,4 @@
-package com.asjay.trading.model.display;
+package com.asjay.trading.model;
 
 public class Period {
     // periods are times in milliseconds since epoch

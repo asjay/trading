@@ -1,6 +1,6 @@
 package com.asjay.trading.trend.indicator;
 
-import com.asjay.trading.model.display.Candle;
+import com.asjay.trading.model.Candle;
 import com.asjay.trading.trend.data.CandleQueue;
 
 import java.math.BigDecimal;
