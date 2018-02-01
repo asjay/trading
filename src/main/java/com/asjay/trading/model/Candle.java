@@ -1,15 +1,15 @@
 package com.asjay.trading.model;
 import com.asjay.trading.model.money.MonetaryUnit;
 
-public class Candle {
+public class Candle<B,S> {
 
-    private MonetaryUnit openPrice;
-    private MonetaryUnit closePrice;
-    private MonetaryUnit highestPrice;
-    private MonetaryUnit lowestPrice;
-    private MonetaryUnit averagePrice;
+    private MonetaryUnit<S> openPrice;
+    private MonetaryUnit<S> closePrice;
+    private MonetaryUnit<S> highestPrice;
+    private MonetaryUnit<S> lowestPrice;
+    private MonetaryUnit<S> averagePrice;
     private Period period;
-    private Volume volume;
+    private Volume<B> volume;
 
     public Candle(MonetaryUnit openPrice, MonetaryUnit closePrice, MonetaryUnit highestPrice, MonetaryUnit lowestPrice, Period period, Volume volume) {
         this.openPrice = openPrice;
@@ -21,14 +21,6 @@ public class Candle {
         this.averagePrice = getAveragePrice();
     }
 
-    public Volume getVolume() {
-        return volume;
-    }
-
-    public void setVolume(Volume volume) {
-        this.volume = volume;
-    }
-
     private MonetaryUnit calculateAveragePrice() {
         return null; //TODO: return the appropriate average price after averaging the open anc close price based on the Monetary Unit.
     }
@@ -37,39 +29,39 @@ public class Candle {
         return averagePrice;
     }
 
-    public MonetaryUnit getOpenPrice() {
+    public MonetaryUnit<S> getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(MonetaryUnit openPrice) {
+    public void setOpenPrice(MonetaryUnit<S> openPrice) {
         this.openPrice = openPrice;
     }
 
-    public MonetaryUnit getHighestPrice() {
-        return highestPrice;
-    }
-
-    public void setHighestPrice(MonetaryUnit highestPrice) {
-        this.highestPrice = highestPrice;
-    }
-
-    public MonetaryUnit getLowestPrice() {
-        return lowestPrice;
-    }
-
-    public void setLowestPrice(MonetaryUnit lowestPrice) {
-        this.lowestPrice = lowestPrice;
-    }
-
-    public MonetaryUnit getClosePrice() {
+    public MonetaryUnit<S> getClosePrice() {
         return closePrice;
     }
 
-    public void setClosePrice(MonetaryUnit closePrice) {
+    public void setClosePrice(MonetaryUnit<S> closePrice) {
         this.closePrice = closePrice;
     }
 
-    public void setAveragePrice(MonetaryUnit averagePrice) {
+    public MonetaryUnit<S> getHighestPrice() {
+        return highestPrice;
+    }
+
+    public void setHighestPrice(MonetaryUnit<S> highestPrice) {
+        this.highestPrice = highestPrice;
+    }
+
+    public MonetaryUnit<S> getLowestPrice() {
+        return lowestPrice;
+    }
+
+    public void setLowestPrice(MonetaryUnit<S> lowestPrice) {
+        this.lowestPrice = lowestPrice;
+    }
+
+    public void setAveragePrice(MonetaryUnit<S> averagePrice) {
         this.averagePrice = averagePrice;
     }
 
@@ -79,5 +71,13 @@ public class Candle {
 
     public void setPeriod(Period period) {
         this.period = period;
+    }
+
+    public void setVolume(Volume<B> volume) {
+        this.volume = volume;
+    }
+
+    public Volume<B> getVolume() {
+        return volume;
     }
 }
