@@ -1,8 +1,8 @@
-package com.asjay.trading.exchanges.gdax.data;
+package com.asjay.trading.trading.exchanges.gdax.data;
 
-import com.asjay.trading.exchanges.IDataClient;
+import com.asjay.trading.trading.exchanges.IDataClient;
 
- public class GdaxDataClient implements IDataClient{
+public class GdaxDataClient implements IDataClient {
 
      @Override
      public void openChannel() {
