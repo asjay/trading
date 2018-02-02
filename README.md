@@ -9,4 +9,4 @@ day trading, since there are thin margins to be had in day trading.
 In future iterations the bot is also going to do arbitrage between the various 
 exchanges that it will support. 
 
-We intend to continually develop the algorithms to get better profit margins. 
+We intend to continually develop the algorithms to get better profit margins. This is a commit.
