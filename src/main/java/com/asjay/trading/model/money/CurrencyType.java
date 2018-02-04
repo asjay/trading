@@ -1,5 +1,5 @@
 package com.asjay.trading.model.money;
 
-public abstract class MonetaryUnit {
+public abstract class CurrencyType {
     public int precision;
 }

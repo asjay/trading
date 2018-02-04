@@ -1,7 +1,7 @@
 package com.asjay.trading.model;
-import com.asjay.trading.model.money.MonetaryUnit;
+import com.asjay.trading.model.money.CurrencyType;
 
-public class Candle<B extends MonetaryUnit,S extends  MonetaryUnit> {
+public class Candle<B extends CurrencyType,S extends CurrencyType> {
 
     private S openPrice;
     private S closePrice;
@@ -21,7 +21,7 @@ public class Candle<B extends MonetaryUnit,S extends  MonetaryUnit> {
         this.averagePrice = getAveragePrice();
     }
 
-    private MonetaryUnit calculateAveragePrice() {
+    private CurrencyType calculateAveragePrice() {
         return null; //TODO: return the appropriate average price after averaging the open anc close price based on the Monetary Unit.
     }
 

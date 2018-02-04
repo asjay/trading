@@ -1,14 +1,14 @@
 package com.asjay.trading.trend.data;
 
 import com.asjay.trading.model.Candle;
-import com.asjay.trading.model.money.MonetaryUnit;
+import com.asjay.trading.model.money.CurrencyType;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class CandleQueue<B extends MonetaryUnit,S extends MonetaryUnit> {
+public class CandleQueue<B extends CurrencyType,S extends CurrencyType> {
 
     Deque<Candle<B,S>> candleList;
 
