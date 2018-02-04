@@ -1,13 +1,13 @@
 package com.asjay.trading.trend.indicator;
 
 import com.asjay.trading.model.Candle;
+import com.asjay.trading.model.CandleObserver;
 import com.asjay.trading.trend.data.CandleQueue;
 
 import java.math.BigDecimal;
 import java.util.Deque;
 
-public class RelativeStrengthIndex
-{
+public class RelativeStrengthIndex implements CandleObserver{
     private static int period; //this will be set by default to 14 periods.
     private int minCalculationPeriod = 250;
     private int maxCalculationPeriod = 500;
@@ -63,5 +63,10 @@ public class RelativeStrengthIndex
         this.index = 0L; // this is initial value. This will be calculated using the formula.
         index = (100 - (100/ 1 + rs));
         return index;
+    }
+
+    @Override
+    public void update() {
+
     }
 }

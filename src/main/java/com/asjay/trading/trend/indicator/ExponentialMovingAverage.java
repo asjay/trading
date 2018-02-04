@@ -1,8 +1,9 @@
 package com.asjay.trading.trend.indicator;
 
+import com.asjay.trading.model.CandleObserver;
 import com.asjay.trading.trend.data.CandleQueue;
 
-public class ExponentialMovingAverage {
+public class ExponentialMovingAverage implements CandleObserver{
     private CandleQueue candleList;
     private int periods;
     private double previousEMA;
@@ -24,5 +25,10 @@ public class ExponentialMovingAverage {
 
     public double calculate(){
         return 0L;
+    }
+
+    @Override
+    public void update() {
+
     }
 }

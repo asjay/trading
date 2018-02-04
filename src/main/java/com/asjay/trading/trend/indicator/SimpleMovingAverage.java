@@ -1,11 +1,12 @@
 package com.asjay.trading.trend.indicator;
 
 import com.asjay.trading.model.Candle;
+import com.asjay.trading.model.CandleObserver;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class SimpleMovingAverage {
+public class SimpleMovingAverage implements CandleObserver{
 
 
     private List<Candle> candleList;
@@ -29,5 +30,10 @@ public class SimpleMovingAverage {
         }
         double sma = movingPrice.doubleValue()/periods;
         return sma;
+    }
+
+    @Override
+    public void update() {
+
     }
 }

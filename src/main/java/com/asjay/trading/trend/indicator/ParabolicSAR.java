@@ -1,4 +1,10 @@
 package com.asjay.trading.trend.indicator;
 
-public class ParabolicSAR {
+import com.asjay.trading.model.CandleObserver;
+
+public class ParabolicSAR implements CandleObserver{
+    @Override
+    public void update() {
+
+    }
 }
