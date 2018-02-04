@@ -1,20 +1,20 @@
 package com.asjay.trading.trend.data;
 
 import com.asjay.trading.model.Candle;
+import com.asjay.trading.model.money.MonetaryUnit;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
 import java.util.stream.Stream;
 
+public class CandleQueue<B extends MonetaryUnit,S extends MonetaryUnit> {
 
-public class CandleQueue {
+    Deque<Candle<B,S>> candleList;
 
-    Deque<Candle> candleList;
-
-    public CandleQueue(List<Candle> candleList) {
-        this.candleList = new ArrayDeque<Candle>();
-        Stream<Candle> stream = candleList.stream();
+    public CandleQueue(List<Candle<B,S>> candleList) {
+        this.candleList = new ArrayDeque<Candle<B,S>>();
+        Stream<Candle<B,S>> stream = candleList.stream();
         stream.forEachOrdered(candle -> candleList.add(candle));
     }
 
@@ -26,7 +26,7 @@ public class CandleQueue {
         return candleList.getLast();
     }
 
-    public Deque<Candle> getLastNCandles(int n){
+    public Deque<Candle<B,S>> getLastNCandles(int n){
         return candleList; //TODO
     }
 

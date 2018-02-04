@@ -1,19 +1,17 @@
 package com.asjay.trading.model;
 
-import com.asjay.trading.model.money.MonetaryUnit;
-
 public class Volume<B>  {
-    private MonetaryUnit<B> units;
+    private B units;
 
-    public Volume(MonetaryUnit<B> units) {
+    public Volume(B units) {
         this.units = units;
     }
 
-    public MonetaryUnit<B> getUnits() {
+    public B getUnits() {
         return units;
     }
 
-    public void setUnits(MonetaryUnit<B> units) {
+    public void setUnits(B units) {
         this.units = units;
     }
 }

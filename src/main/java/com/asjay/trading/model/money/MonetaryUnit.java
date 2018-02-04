@@ -1,4 +1,5 @@
 package com.asjay.trading.model.money;
 
-public interface MonetaryUnit<B> {
+public abstract class MonetaryUnit {
+    public int precision;
 }

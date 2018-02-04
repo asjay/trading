@@ -26,7 +26,6 @@ public class SimpleMovingAverage {
         int periods = candleList.size();
         BigDecimal movingPrice = new BigDecimal(0);
         for(Candle candle: candleList){
-            movingPrice.add(candle.getClosePrice());
         }
         double sma = movingPrice.doubleValue()/periods;
         return sma;

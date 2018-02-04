@@ -23,8 +23,6 @@ public class ExponentialMovingAverage {
     }
 
     public double calculate(){
-        double smoothingFactor = 2/(1+periods);
-        this.ema = (candleList.getLastCandle().getClosePrice().doubleValue()*smoothingFactor)+(previousEMA*(1-smoothingFactor));
-        return ema;
+        return 0L;
     }
 }

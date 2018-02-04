@@ -1,17 +1,17 @@
 package com.asjay.trading.model;
 import com.asjay.trading.model.money.MonetaryUnit;
 
-public class Candle<B,S> {
+public class Candle<B extends MonetaryUnit,S extends  MonetaryUnit> {
 
-    private MonetaryUnit<S> openPrice;
-    private MonetaryUnit<S> closePrice;
-    private MonetaryUnit<S> highestPrice;
-    private MonetaryUnit<S> lowestPrice;
-    private MonetaryUnit<S> averagePrice;
+    private S openPrice;
+    private S closePrice;
+    private S highestPrice;
+    private S lowestPrice;
+    private S averagePrice;
     private Period period;
     private Volume<B> volume;
 
-    public Candle(MonetaryUnit openPrice, MonetaryUnit closePrice, MonetaryUnit highestPrice, MonetaryUnit lowestPrice, Period period, Volume volume) {
+    public Candle(S openPrice, S closePrice, S highestPrice, S lowestPrice, Period period, Volume<B> volume) {
         this.openPrice = openPrice;
         this.closePrice = closePrice;
         this.highestPrice = highestPrice;
@@ -25,43 +25,43 @@ public class Candle<B,S> {
         return null; //TODO: return the appropriate average price after averaging the open anc close price based on the Monetary Unit.
     }
 
-    public MonetaryUnit getAveragePrice() {
+    public S getAveragePrice() {
         return averagePrice;
     }
 
-    public MonetaryUnit<S> getOpenPrice() {
+    public S getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(MonetaryUnit<S> openPrice) {
+    public void setOpenPrice(S openPrice) {
         this.openPrice = openPrice;
     }
 
-    public MonetaryUnit<S> getClosePrice() {
+    public S getClosePrice() {
         return closePrice;
     }
 
-    public void setClosePrice(MonetaryUnit<S> closePrice) {
+    public void setClosePrice(S closePrice) {
         this.closePrice = closePrice;
     }
 
-    public MonetaryUnit<S> getHighestPrice() {
+    public S getHighestPrice() {
         return highestPrice;
     }
 
-    public void setHighestPrice(MonetaryUnit<S> highestPrice) {
+    public void setHighestPrice(S highestPrice) {
         this.highestPrice = highestPrice;
     }
 
-    public MonetaryUnit<S> getLowestPrice() {
+    public S getLowestPrice() {
         return lowestPrice;
     }
 
-    public void setLowestPrice(MonetaryUnit<S> lowestPrice) {
+    public void setLowestPrice(S lowestPrice) {
         this.lowestPrice = lowestPrice;
     }
 
-    public void setAveragePrice(MonetaryUnit<S> averagePrice) {
+    public void setAveragePrice(S averagePrice) {
         this.averagePrice = averagePrice;
     }
 
