@@ -1,12 +1,14 @@
 package com.asjay.trading.trend.indicator;
 
 import com.asjay.trading.model.Candle;
-import com.asjay.trading.model.CandleObserver;
+import com.asjay.trading.model.Observer;
+import com.asjay.trading.model.money.CurrencyType;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class SimpleMovingAverage implements CandleObserver{
+public class SimpleMovingAverage<BuyType extends CurrencyType, SellType extends CurrencyType>
+        implements Observer<Candle<BuyType, SellType>> {
 
 
     private List<Candle> candleList;
@@ -33,7 +35,10 @@ public class SimpleMovingAverage implements CandleObserver{
     }
 
     @Override
-    public void update() {
+    public void onUpdate() {
+        //remove first candle
+        //add latest candle
+        //recalculate
 
     }
 }

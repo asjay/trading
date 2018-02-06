@@ -1,17 +1,17 @@
 package com.asjay.trading.model;
 import com.asjay.trading.model.money.CurrencyType;
 
-public class Candle<B extends CurrencyType,S extends CurrencyType> {
+public class Candle<BuyType extends CurrencyType,SellType extends CurrencyType> implements Observable {
 
-    private S openPrice;
-    private S closePrice;
-    private S highestPrice;
-    private S lowestPrice;
-    private S averagePrice;
+    private SellType openPrice;
+    private SellType closePrice;
+    private SellType highestPrice;
+    private SellType lowestPrice;
+    private SellType averagePrice;
     private Period period;
-    private Volume<B> volume;
+    private Volume<BuyType> volume;
 
-    public Candle(S openPrice, S closePrice, S highestPrice, S lowestPrice, Period period, Volume<B> volume) {
+    public Candle(SellType openPrice, SellType closePrice, SellType highestPrice, SellType lowestPrice, Period period, Volume<BuyType> volume) {
         this.openPrice = openPrice;
         this.closePrice = closePrice;
         this.highestPrice = highestPrice;
@@ -25,43 +25,43 @@ public class Candle<B extends CurrencyType,S extends CurrencyType> {
         return null; //TODO: return the appropriate average price after averaging the open anc close price based on the Monetary Unit.
     }
 
-    public S getAveragePrice() {
+    public SellType getAveragePrice() {
         return averagePrice;
     }
 
-    public S getOpenPrice() {
+    public SellType getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(S openPrice) {
+    public void setOpenPrice(SellType openPrice) {
         this.openPrice = openPrice;
     }
 
-    public S getClosePrice() {
+    public SellType getClosePrice() {
         return closePrice;
     }
 
-    public void setClosePrice(S closePrice) {
+    public void setClosePrice(SellType closePrice) {
         this.closePrice = closePrice;
     }
 
-    public S getHighestPrice() {
+    public SellType getHighestPrice() {
         return highestPrice;
     }
 
-    public void setHighestPrice(S highestPrice) {
+    public void setHighestPrice(SellType highestPrice) {
         this.highestPrice = highestPrice;
     }
 
-    public S getLowestPrice() {
+    public SellType getLowestPrice() {
         return lowestPrice;
     }
 
-    public void setLowestPrice(S lowestPrice) {
+    public void setLowestPrice(SellType lowestPrice) {
         this.lowestPrice = lowestPrice;
     }
 
-    public void setAveragePrice(S averagePrice) {
+    public void setAveragePrice(SellType averagePrice) {
         this.averagePrice = averagePrice;
     }
 
@@ -73,11 +73,26 @@ public class Candle<B extends CurrencyType,S extends CurrencyType> {
         this.period = period;
     }
 
-    public void setVolume(Volume<B> volume) {
+    public void setVolume(Volume<BuyType> volume) {
         this.volume = volume;
     }
 
-    public Volume<B> getVolume() {
+    public Volume<BuyType> getVolume() {
         return volume;
+    }
+
+    @Override
+    public boolean addObserver(Observer observer) {
+        return false;
+    }
+
+    @Override
+    public boolean removeObserver(Observer observer) {
+        return false;
+    }
+
+    @Override
+    public boolean notifyObservers() {
+        return false;
     }
 }
